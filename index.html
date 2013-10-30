@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="en" ng-app>
 <head>
     <meta charset="utf-8">
 
@@ -29,9 +29,8 @@
                 <span class="icon-bar"></span>
             </button>
             <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-            <a class="navbar-brand logo-nav" href="index.php"><img src="http://placehold.it/150x75&text=Logo"></a>
+            <a class="navbar-brand logo-nav" href="index.php"><img src="./img/logo-software-developer.jpg" style="height: 145px;"></a>
         </div>
-
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -46,6 +45,7 @@
 </nav>
 
 <div class="container">
+    <p>This is a {{'test' + '!'}}</p>
 
     <div class="row">
         <div class="col-lg-8">
@@ -111,6 +111,7 @@
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
 
 </body>
 </html>
