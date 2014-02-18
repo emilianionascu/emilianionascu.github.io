@@ -28,9 +28,10 @@ footer {
     background-image: none;
 }*/
 
-/*.navbar>.container .navbar-brand {
-    font-family: LeagueGothic, "Helvetica Neue", Helvetica, Arial, sans-serif;
-}*/
+.navbar > .container .navbar-brand {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
 
 span.logo {
@@ -41,4 +42,5 @@ span.logo {
     letter-spacing: 0;
     line-height: 1.5em;
     font-size: 2.5em;
+    font-family: cursive;
 }
