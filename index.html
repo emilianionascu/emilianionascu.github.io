@@ -1,6 +1,6 @@
-<!doctype html>
+﻿<!doctype html>
 
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
 
@@ -18,104 +18,74 @@
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
 </head>
-<body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-            <span class="navbar-brand logo">geeks</span>
-            <a class="navbar-brand logo-nav" href="index.php"><img src="./img/logo.png"
-                                                                   style="height: 105px; opacity: 0.6;"> </a>
-            <span class="navbar-brand logo">in suits</span>
+<body ng-controller="PresentationController">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand logo-nav" href="">
+                    {
+                    <img src="./img/logo.png" style="height: 50px;">
+                    }
+                </a>
+                <span class="navbar-brand logo">geeks in suits</span>
 
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">My Work</a></li>
+                    <li><a href="#">About Me</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div>
+                    <div ng-repeat="article in articles.data">
+                        <div ng-include="articles.resolvePath(article.fileName)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="col-lg-8">
+                    My name is Emilian Ionascu and I primarily am a .NET software developer.
+                    Lately I've developed a passion for functional programming and I am in love with F# but I am also interested in acquiring skills in Python or Scala.
+                </div>
+                <div class="pull-right"><img class="img-rounded" alt="Emilian Ionascu" ng-src="http://www.gravatar.com/avatar/{{md5.createHash('emilian.ionascu@gmail.com') }}" /> </div>
+                <!--<a class="btn btn-primary btn-lg" href="#">Call to Action!</a>-->
+            </div>
         </div>
-        <!-- /.navbar-collapse -->
+        <footer>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Emilian Ionascu</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
     <!-- /.container -->
-</nav>
 
-<div class="container">
-    <p>This is a {{'test' + '!'}}</p>
-
-    <div class="row">
-        <div class="col-lg-8">
-            <img class="img-responsive img-rounded" src="http://placehold.it/900x350"><!-- take out img-rounded if you don't want the rounded corners on the image -->
-        </div>
-        <div class="col-lg-4">
-            <h1>Business Name or Tagline</h1>
-
-            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it
-                makes a great use of the standard Bootstrap core components. Feel free to use this template for any
-                project you want!</p>
-            <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="well text-center">
-                This is a well that is a great spot for a business tagline or phone number for easy access!
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-4">
-            <h2>Heading 1</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin auctor quam ac tempor. Cras
-                a ante sed libero mollis sodales. Praesent fringilla, neque ut ultrices faucibus, dolor eros ultrices
-                neque, nec bibendum arcu ipsum eget justo.</p>
-            <a class="btn btn-default" href="#">More Info</a>
-        </div>
-        <div class="col-lg-4">
-            <h2>Heading 2</h2>
-
-            <p>Phasellus vestibulum sagittis purus laoreet varius. Pellentesque malesuada malesuada mattis. Aliquam sed
-                porta nisi, eget suscipit dolor. Nam ipsum sapien, rhoncus eu leo eu, ultricies pellentesque tellus.</p>
-            <a class="btn btn-default" href="#">More Info</a>
-        </div>
-        <div class="col-lg-4">
-            <h2>Heading 3</h2>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin auctor quam ac tempor. Cras
-                a ante sed libero mollis sodales. Praesent fringilla, neque ut ultrices faucibus, dolor eros ultrices
-                neque, nec bibendum arcu ipsum eget justo.</p>
-            <a class="btn btn-default" href="#">More Info</a>
-        </div>
-    </div>
-
-    <footer>
-        <hr>
-        <div class="row">
-            <div class="col-lg-12">
-                <p>Copyright &copy; Company 2013 &middot; Facebook &middot; Twitter &middot; Google+</p>
-            </div>
-        </div>
-    </footer>
-
-</div>
-<!-- /.container -->
-
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
-
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/common/hashing.js"></script>
+    <script src="app/presentation/presentation.js"></script>
+    <script src="app/data/ArticlesDataSource.js"></script>
 </body>
 </html>

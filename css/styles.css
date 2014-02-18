@@ -1,5 +1,5 @@
 body {
-    margin-top: 185px; /* adjust this if the height of the menu bar changes */
+    margin-top: 105px; /* adjust this if the height of the menu bar changes */
 }
 
 .nav {
@@ -10,14 +10,35 @@ footer {
     padding: 30px 0;
 }
 
+/*.navbar-inverse .navbar-brand {
+    text-align: center;
+    font-family: "League-Gothic", Courier;
+    text-transform: uppercase;
+    color: #707070;
+    text-shadow: 5px 5px 0px #eee, 7px 7px 0px #707070;
+}*/
+
+/*.navbar-inverse .navbar-brand.logo-nav {
+        margin-top: 8px;
+        color: bisque;
+    }*/
+
+/*.navbar-fixed-top, .navbar-inverse {
+    background-color: #474747;
+    background-image: none;
+}*/
+
+/*.navbar>.container .navbar-brand {
+    font-family: LeagueGothic, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}*/
+
+
 span.logo {
-    font-family: 'Comic Sans MS';
-    color: #222 !important;
+    text-transform: uppercase;
     text-decoration: none;
     word-spacing: normal;
     text-align: left;
     letter-spacing: 0;
     line-height: 1.5em;
-    font-size: 2em;
-    text-shadow: 1px 1px #555 !important;
+    font-size: 2.5em;
 }

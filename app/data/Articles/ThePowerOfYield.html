@@ -1,0 +1,41 @@
+﻿<h1>The power of yield in C#</h1>
+<div>
+    <p>Today I've stumbled upon one use case of the yield keyword in c# which is proved by the following test:</p>
+</div>
+<div style="background: #ffffff; overflow:auto;width:auto;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+    <table style="width: 100%">
+        <tr>
+            <td>
+                <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre>
+            </td>
+            <td>
+                <pre style="margin: 0; line-height: 125%"><span style="color: #0000CC">[Test]</span>
+<span style="color: #008800; font-weight: bold">public</span> <span style="color: #008800; font-weight: bold">void</span> <span style="color: #0066BB; font-weight: bold">TestYield</span>() {
+    <span style="color: #333399; font-weight: bold">var</span> errors = Validate();
+    Assert.AreEqual(<span style="color: #6600EE; font-weight: bold">2</span>, errors.Count());      
+}
+ 
+<span style="color: #008800; font-weight: bold">public</span> IEnumerable&lt;<span style="color: #333399; font-weight: bold">string</span>&gt; Validate() {
+    <span style="color: #008800; font-weight: bold">yield</span> <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;Foo&quot;</span>;
+    <span style="color: #008800; font-weight: bold">yield</span> <span style="color: #008800; font-weight: bold">return</span> <span style="background-color: #fff0f0">&quot;Bar&quot;</span>;
+}
+</pre>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <p>As you would expect the assertion will be true and the result will be an enumerable collection of {"Foo", "Bar"}. This can be useful in various scenarios such as model validation, where you can use it to collect the errors, or any other use cases you can think of.</p>
+</div>
+<div>
+    <p>By Emilian Ionascu on January 6, 2013 at 7:08 PM </p>
+</div>
