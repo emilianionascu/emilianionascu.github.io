@@ -29,8 +29,8 @@ footer {
 }*/
 
 .navbar > .container .navbar-brand {
-    color: white;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    color: #EEEEEE;
+    text-shadow: -1px -1px 0 #555555, 1px -1px 0 #555555, -1px 1px 0 #555555, 1px 1px 0 #555555;
 }
 
 
@@ -43,4 +43,17 @@ span.logo {
     line-height: 1.5em;
     font-size: 2.5em;
     font-family: cursive;
+}
+
+.navbar-static-top, .navbar-fixed-top, .navbar-fixed-bottom {
+    background-color: #3a3a3a;
+    background-image: none;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #EEEEEE;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #CCCCCC;
 }
