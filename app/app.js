@@ -1,5 +1,6 @@
 angular.module('app', [
     'angular-md5',
     'presentation',
-    'data.articles'
+    'data.articles',
+    'nvd3'
 ]);

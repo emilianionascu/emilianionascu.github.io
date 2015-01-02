@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Emilian Ionascu - Software Developer</title>
-    <meta name="description" content="Software Developer Emilian Ionascu Personal Page">
+    <title>Emilian Ionascu Resume</title>
+    <meta name="description" content="Software Developer Emilian Ionascu Resume">
     <meta name="author" content="Emilian Ionascu">
 
     <!--[if lt IE 9]>
@@ -13,59 +13,48 @@
     <script src="./js/respond.min.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/nvd3/nv.d3.css">
     <link rel="stylesheet" href="css/styles.css?v=1.0">
-
 </head>
 <body ng-controller="PresentationController">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                <a class="navbar-brand logo-nav" href="">
-                    {_
-                    <img src="./img/logo.png" style="height: 50px; margin: 0px -10px;">
-                    _}
-                </a>
-                <span class="navbar-brand logo">devs in suits</span>
-
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">My Work</a></li>
-                    <li><a href="#">About Me</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-xs-8 col-xs-push-4">
-                <div>
-                    <div ng-repeat="article in articles.data">
-                        <div ng-include="articles.resolvePath(article.fileName)"></div>
+            <div class="col-xs-12">
+                <div id="photo-header" class="text-center">
+                    <div id="photo">
+                        <img src="https://pbs.twimg.com/profile_images/458986817186852865/3UZZyXhe_400x400.jpeg" alt="avatar">
+                    </div>
+                    <div id="text-header">
+                        <h1 ng-cloak>
+                            Hello,<br />
+                            My name is <span>Emilian</span><sup>{{age}}</sup> and this is my resume/cv
+                        </h1>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-xs-4">
-                <div class="col-lg-8">
-                    My name is Emilian Ionascu and I primarily am a .NET software developer.
-                    Lately I've developed a passion for functional programming and I am in love with F# but I am also interested in acquiring skills in Python or Scala.
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-7">
+                <div class="box">
+                    <h2>About Me</h2>
+                    <p>
+                        I am a software developer by trade, trainer and father.  Throughout my career I've been involved in several projects and had various levels of responsibilities.
+                        I've constantly written code in quite a few programming languages and I consider it one of my career goals to get to know the most mature programming languages out there and hopefully use them in real world projects.
+                        From software developer to resources and technologies director I've been a back-up component lead, team lead, scrum master plus some less clearly defined roles.
+                    </p>
                 </div>
-                <div class="pull-right"><img class="img-rounded" alt="Emilian Ionascu" ng-src="http://www.gravatar.com/avatar/{{md5.createHash('emilian.ionascu@gmail.com') }}" /> </div>
-                <!--<a class="btn btn-primary btn-lg" href="#">Call to Action!</a>-->
+                <div ng-include="'app/resume/education.html'"></div>
+            </div>
+            <div class="col-xs-12 col-sm-5">
+                <div ng-include="'app/resume/contact.html'"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-include="'app/resume/skills.html'"></div>
             </div>
         </div>
         <footer>
@@ -79,13 +68,31 @@
 
     </div>
     <!-- /.container -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+    <!--<script src="http://bouil.github.io/angular-google-chart/ng-google-chart.js"></script>-->
+    
+    <!--<script src="bower_components/angular/angular.js"></script>-->
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/nvd3/nv.d3.js"></script> <!-- or use another assembly -->
+    <script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
 
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.3/angular.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/common/hashing.js"></script>
     <script src="app/presentation/presentation.js"></script>
     <script src="app/data/ArticlesDataSource.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments);
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g;
+            m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-57563276-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>
